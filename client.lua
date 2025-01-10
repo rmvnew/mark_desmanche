@@ -97,6 +97,7 @@ Citizen.CreateThread(function()
                     -- Notificar e pegar ferramentas
 
                     TriggerEvent("Notify","importante","Você está pegando as ferramentas.")
+                    
 
                     FreezeEntityPosition(ped, true)
                     SetEntityHeading(ped, Config.coordenadas_locais_ferramentas[indice].h)
@@ -109,6 +110,7 @@ Citizen.CreateThread(function()
                     pegou_ferramentas = true
 
                     TriggerEvent('Notify', 'sucesso', 'Você pegou as ferramentas, desmanche o veículo!')
+                    PlaySoundFrontend(-1, "PICK_UP", "HUD_FRONTEND_DEFAULT_SOUNDSET", true)
 
                     FreezeEntityPosition(ped, false)
                     ClearPedTasks(ped)
@@ -393,6 +395,7 @@ Citizen.CreateThread(function()
                         ClearPedTasks(ped)
 
                         TriggerEvent('Notify','sucesso','Parabéns! Você vendeu as peças no mercado livre.')
+                        PlaySoundFrontend(-1, "PICK_UP", "HUD_FRONTEND_DEFAULT_SOUNDSET", true)
 
                         vSERVER.GerarPagamento(placa, modelHash)
 
@@ -692,3 +695,14 @@ function ShowHelpNotification(msg)
     BeginTextCommandDisplayHelp('HelpNotification')
     EndTextCommandDisplayHelp(0, false, true, -1)
 end
+
+
+-- evento para escutar
+
+RegisterNetEvent("pecas_vendidas")
+AddEventHandler("pecas_vendidas",function(message)
+
+    PlaySoundFrontend(-1, "PICK_UP", "HUD_FRONTEND_DEFAULT_SOUNDSET", true)
+    
+
+end)
