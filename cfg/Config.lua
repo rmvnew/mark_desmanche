@@ -1,5 +1,5 @@
 Config = {
-    webhookdesmanche = "", -- Link do webhook
+    webhookdesmanche = "https://discordapp.com/api/webhooks/1327363848528724132/utGA3CVZQqrEUWmEVrlAAmgACicTMu2ln4bn84ZUCjPkN99_k3cIU5PkhIU4OXWZFGxn", -- Link do webhook
 
 
     permissao = "admin.permissao", -- Permissão para desmanchar
@@ -8,13 +8,14 @@ Config = {
 
     --Local onde o carro deve ser colocado para ser desmanchado
     coordenadas_locais_desmanche = {
-        [1] = { ['x'] = 480.39, ['y'] = -1317.74, ['z'] = 29.2},  -- SUL
+        
+        [1] = { ['x'] = 480.95, ['y'] = -1322.82, ['z'] = 29.2,},  -- SUL
         [2] = { ['x'] = 1533.84, ['y'] = 3534.98, ['z'] = 35.37 }, -- NORTE
     },
 
     -- Local onde o player pegará as ferramentas para iniciar o serviço (o ['h'] é a direção que o player está olhando)
     coordenadas_locais_ferramentas = {
-        [1] = { ['x'] = 473.75, ['y'] = -1313.94, ['z'] = 29.2, ['h'] = 108.99 }, -- SUL 
+        [1] = { ['x'] = 475.61, ['y'] = -1310.34, ['z'] = 29.2, ['h'] = 310.34 }, -- SUL 
         [2] = { ['x'] = 1532.46, ['y'] = 3533.0, ['z'] = 35.37, ['h'] = 34.44 }, -- NORTE
     },
 
@@ -40,13 +41,13 @@ Config = {
     -- Itens recebidos após o término do desmanche esses itens podem ser removidos.
     itens_extra = {
         -- DE 1 À 4 PARA CARROS
-        [1] = { ['nome'] = "discofreio", ['valor'] = 2000 },
-        [2] = { ['nome'] = "parachoque", ['valor'] = 2000 },
-        [3] = { ['nome'] = "volante", ['valor'] = 2000 },
-        [4] = { ['nome'] = "motorcarro", ['valor'] = 2000 },
+        [1] = { ['nome'] = "discofreio", ['valor'] = 3000 },
+        [2] = { ['nome'] = "parachoque", ['valor'] = 3000 },
+        [3] = { ['nome'] = "volante", ['valor'] = 3000 },
+        [4] = { ['nome'] = "motorcarro", ['valor'] = 3000 },
 
         -- RESTANTE PARA MOTOS
-        [5] = { ['nome'] = "motormoto", ['valor'] = 2000 },
+        [5] = { ['nome'] = "motormoto", ['valor'] = 3000 },
         
     },
 
@@ -56,7 +57,8 @@ Config = {
     },
 
     vendaNPC_location = {
-        [1] = {x = 1548.7, y = 3513.14, z = 35.99, heading = 304.64} --Norte
+        [1] = {x = 1548.7, y = 3513.14, z = 35.99, heading = 304.64}, --Norte
+        [2] = {x = 473.7, y = -1313.96, z = 29.2, heading = 289.64} --Norte
     }
 
 }

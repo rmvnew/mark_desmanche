@@ -126,7 +126,7 @@ AddEventHandler("vendaNPC:execute", function()
         if totalVendido > 0 then
             vRP.giveInventoryItem(user_id, "dirty_money", totalVendido)
             TriggerClientEvent("Notify", source, "sucesso", "Você vendeu as peças por R$" .. totalVendido .. ",00.")
-            TriggerClientEvent("pecas_vendidas",-1,"venda")
+            TriggerClientEvent("pecas_vendidas",source,totalVendido)
         else
             TriggerClientEvent("Notify", source, "importante", "Você não possui peças úteis para vender.")
         end

@@ -660,7 +660,7 @@ Citizen.CreateThread(function()
 
                 if distance < 3.0 then
                     sleep = 5 -- Reduz o tempo de espera para interação
-                    DrawText3D(loc.x, loc.y, loc.z + 1.0, "[E] Falar com o NPC") -- Exibe a mensagem de interação
+                    DrawText3D(loc.x, loc.y, loc.z + 0.5, "[E] Para vender as Peças") -- Exibe a mensagem de interação
 
                     if IsControlJustReleased(0, 38) then -- Tecla 'E'
                         TriggerServerEvent("vendaNPC:execute") -- Envia evento para o servidor
@@ -700,9 +700,13 @@ end
 -- evento para escutar
 
 RegisterNetEvent("pecas_vendidas")
-AddEventHandler("pecas_vendidas",function(message)
+AddEventHandler("pecas_vendidas",function(totalVendido)
 
     PlaySoundFrontend(-1, "PICK_UP", "HUD_FRONTEND_DEFAULT_SOUNDSET", true)
     
+    SendNUIMessage({
+        action = "updateDirtMoney",
+        amount = totalVendido
+    })
 
 end)
